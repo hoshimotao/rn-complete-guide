@@ -5,7 +5,7 @@ export default function App() {
   return (
     <View style={styles.container}>
      
-         
+         <View> Hello There, User. </View>
         <Button> Submit </Button>
       </View>
 
