@@ -23,3 +23,9 @@ A: Unlike browser, mobile apps don't give you automatic scrolling. <ScrollView> 
 3) What's the core difference between <FlatList> and <ScrollView>?
 
 A: FlatList optimizes scrolling by only rendering what is required.
+
+
+
+
+<Touchable> component is useful for enabling touch events, such as deleting an item, or taking user to a linked website.
+<TouchableOpacity> component can give the on press event a nice effect as it's being deleted.
