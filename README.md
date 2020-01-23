@@ -29,3 +29,5 @@ A: FlatList optimizes scrolling by only rendering what is required.
 
 <Touchable> component is useful for enabling touch events, such as deleting an item, or taking user to a linked website.
 <TouchableOpacity> component can give the on press event a nice effect as it's being deleted.
+
+**DO NOT GET STUCK TRYING TO STYLE A BUTTON - WRAP IT IN A VIEW COMPONENT INSTEAD**

@@ -9,13 +9,13 @@ const GoalInput = props => {
 
   const onGoalHandler = () => {
     props.onAddGoal (enteredGoal);
-    setEnteredGoal('');
+    setEnteredGoal ('');
   };
 
   const deleteGoalHandler = () => {
-    props.onCancel(enteredGoal);
-    setEnteredGoal('')
-  }
+    props.onCancel (enteredGoal);
+    setEnteredGoal ('');
+  };
 
   return (
     <Modal visible={props.visible} animationType="slide">
@@ -28,11 +28,19 @@ const GoalInput = props => {
           onChangeText={goalInputHandler}
           value={enteredGoal}
         />
+        <View style={styles.buttons}>
 
-        {/* the add button */}        
-        <Button title="Add" onPress={onGoalHandler} />
-        {/* the delete button */}
-        <Button title="Cancel" color="red" onPress={deleteGoalHandler}/>
+          {/* the add button */}
+          <View style={styles.buttonProps}>
+            <Button title="Add" onPress={onGoalHandler} />
+          </View>
+
+          {/* the delete button */}
+          <View style={styles.buttonProps}>
+            <Button title="Cancel" color="red" onPress={deleteGoalHandler} />
+          </View>
+
+        </View>
       </View>
     </Modal>
   );
@@ -54,6 +62,14 @@ const styles = StyleSheet.create ({
     padding: 8,
     fontSize: 16,
     borderRadius: 4,
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 220
+  },
+  buttonProps: {
+    width: 100,
   },
 });
 
