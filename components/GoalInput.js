@@ -23,7 +23,7 @@ const GoalInput = props => {
       <View style={styles.inputContainer}>
         {/* <Text> Goals </Text> */}
         <TextInput
-          placeholder="Course Goal"
+          placeholder="Business Name"
           style={styles.input}
           onChangeText={goalInputHandler}
           value={enteredGoal}

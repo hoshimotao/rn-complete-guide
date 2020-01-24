@@ -1,46 +1,54 @@
 import React, {useState} from 'react';
-import {
-  StyleSheet,
-  View,
-  Button,
-  FlatList,
-} from 'react-native';
+import {StyleSheet, View, Button, FlatList} from 'react-native';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 
 export default function App () {
   const [courseGoals, setCourseGoals] = useState ([]);
-  const [isAddMode, setIsAddMode] = useState(false);
+  const [isAddMode, setIsAddMode] = useState (false);
 
   const addGoalHandler = goalTitle => {
+    if (goalTitle.length === 0) {
+      return;
+    }
+
     setCourseGoals (currentGoals => [
       ...currentGoals,
       {id: Math.random ().toString (), value: goalTitle},
     ]);
 
-    setIsAddMode(false);
+    setIsAddMode (false);
   };
 
   const cancelAdditionGoalHandler = () => {
-    setIsAddMode(false);
-    
-  }
+    setIsAddMode (false);
+  };
 
-  const removeGoalHandler = goalId =>{
-    setCourseGoals(currentGoals => {
-      console.log(currentGoals)
-      return currentGoals.filter((goal) => goal.id !== goalId)
-    })
-  }
+  const removeGoalHandler = goalId => {
+    setCourseGoals (currentGoals => {
+      console.log ("DELETING" + goalId);
+      return currentGoals.filter (goal => goal.id !== goalId);
+    });
+  };
 
   return (
     <View style={styles.screen}>
-      <Button title="Add new business" onPress={() => setIsAddMode(true)} />
-      <GoalInput visible={isAddMode} onAddGoal={addGoalHandler} onCancel={cancelAdditionGoalHandler} />
+      <Button title="Add new business" onPress={() => setIsAddMode (true)} />
+      <GoalInput
+        visible={isAddMode}
+        onAddGoal={addGoalHandler}
+        onCancel={cancelAdditionGoalHandler}
+      />
       <FlatList
         keyExtractor={(item, index) => item.id}
         data={courseGoals}
-        renderItem={itemData => <GoalItem id= {itemData.item.id} onDelete={removeGoalHandler} title={itemData.item.value} />}
+        renderItem={itemData => (
+          <GoalItem
+            id={itemData.item.id}
+            onDelete={removeGoalHandler}
+            title={itemData.item.value}
+          />
+        )}
       />
     </View>
   );

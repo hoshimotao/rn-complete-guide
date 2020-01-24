@@ -1,3 +1,12 @@
+
+------ Open remote debugger on emulator------
+ Android = CTRL + M
+ iPhone = CMD + D
+
+ Toggle Inspector is basically chrome dev tools but on mobile 😏
+---------------------------------------------
+
+
 - It's a good idea to wrap <Text> elements in a <View> element for more styling options.
 
 - ScrollView is another important component in ReactNative and must be explicitly imported at the top ---> 
