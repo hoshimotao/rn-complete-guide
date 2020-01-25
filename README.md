@@ -1,4 +1,12 @@
 
+To run program:
+
+| For Windows |
+- Install Expo and Android Studio on device
+- Open program in VSCode
+- In VSCode type "npm start"
+- In browser, choose "Run on Android device/emulator" or "Run on iOS simulator"
+
 ------ Open remote debugger on emulator------
  Android = CTRL + M
  iPhone = CMD + D
